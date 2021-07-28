@@ -1,0 +1,65 @@
+[
+    {
+        "id": "scalr-webhook",
+        "execute-command": "/root/slack.sh",
+        "command-working-directory": "/root",
+        "include-command-output-in-response": true,
+        "pass-environment-to-command": [
+            {
+                "envname": "EVENT_NAME",
+                "source": "payload",
+                "name": "eventName"
+            },
+            {
+                "envname": "server_name",
+                "source": "payload",
+                "name": "data.SCALR_SERVER_HOSTNAME"
+            },
+            {
+                "envname": "FARM_NAME",
+                "source": "payload",
+                "name": "data.SCALR_FARM_NAME"
+            },
+            {
+                "envname": "workspace_env",
+                "source": "payload",
+                "name": "data.SCALR_EVENT_ENV_NAME"
+            },
+            {
+                "envname": "workspace_acc",
+                "source": "payload",
+                "name": "data.SCALR_EVENT_ACCOUNT_NAME"
+            },
+            {
+                "envname": "user",
+                "source": "payload",
+                "name": "data.SCALR_EVENT_FARM_OWNER_USERNAME"
+            },
+            {
+                "envname": "externalip",
+                "source": "payload",
+                "name": "data.SCALR_EXTERNAL_IP"
+            },
+            {
+                "envname": "internalip",
+                "source": "payload",
+                "name": "data.SCALR_INTERNAL_IP"
+            },
+            {
+                "envname": "servertype",
+                "source": "payload",
+                "name": "data.SCALR_SERVER_TYPE"
+            },
+            {
+                "envname": "cloud",
+                "source": "payload",
+                "name": "data.SCALR_CLOUD_PLATFORM"
+            },
+            {
+                "envname": "image",
+                "source": "payload",
+                "name": "data.SCALR_ROLE_OS"
+            }
+        ]
+    }
+]
